@@ -6,6 +6,6 @@
 [Medium Article](https://medium.com/@umairkz52/role-based-authorization-role-based-access-control-in-react-js-65c05a372ca8)
 In the article example is different but the approach is same
 
-##Description
+## Description
 The idea is, simply prevent the app to generate unnecessary routes, rather checking current user role on each route it is great to generate only the routes that user have access.
 
