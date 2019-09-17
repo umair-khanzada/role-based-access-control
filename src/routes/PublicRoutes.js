@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import { Link, Route, Switch } from 'react-router-dom';
 import JumbotronWrapper from '../components/JumbotronWrapper';
 import Login from '../components/Login';
+import NotFound from '../components/NotFound';
 
 const Register = () => (
 	<JumbotronWrapper title="Register">
@@ -21,9 +22,10 @@ const ForgotPassword = () => (
 const PublicRoutes = ({ match }) => (
 	<Fragment>
 		<Switch>
-			<Route path="/forgot-password" render={ForgotPassword} />
-			<Route path="/register" exact render={Register} />
-			<Route path="" component={Login} />
+			<Route path="/forgot-password" component={ForgotPassword} />
+			<Route path="/register" component={Register} />
+			<Route exact path="/" component={Login} />
+			<Route component={NotFound} />
 		</Switch>
 	</Fragment>
 );

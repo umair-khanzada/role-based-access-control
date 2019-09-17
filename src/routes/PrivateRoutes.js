@@ -4,6 +4,7 @@ import { uniqBy } from 'lodash';
 import { rolesConfig } from '../config/roles';
 import * as Routes from './index';
 import Navigation from '../components/Navigation';
+import NotFound from '../components/NotFound';
 
 class PrivateRoutes extends Component {
 	state = { allowedRoutes: [] };
@@ -45,6 +46,7 @@ class PrivateRoutes extends Component {
 							path={`${this.props.match.path}${route.url}`}
 						/>
 					))}
+					<Route component={NotFound} />
 				</Switch>
 			</Fragment>
 		);

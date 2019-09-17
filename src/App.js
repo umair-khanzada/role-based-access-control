@@ -21,7 +21,7 @@ class App extends Component {
 						<Router history={history}>
 							<Switch>
 								<Route path="/app" component={PrivateRoutes} />
-								<Route path="/" render={authentication} />
+								<Route path="" render={authentication} />
 							</Switch>
 						</Router>
 					</Col>
