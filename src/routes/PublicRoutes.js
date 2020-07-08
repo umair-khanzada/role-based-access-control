@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 import { Link, Route, Switch } from 'react-router-dom';
-import JumbotronWrapper from '../components/JumbotronWrapper';
-import Login from '../components/Login';
-import NotFound from '../components/NotFound';
+import JumbotronWrapper from 'components/common/JumbotronWrapper';
+import Login from 'components/Login';
+import NotFound from 'components/NotFound';
 
 const Register = () => (
 	<JumbotronWrapper title="Register">

@@ -1,5 +1,5 @@
 import React from 'react';
-import JumbotronWrapper from '../components/JumbotronWrapper';
+import JumbotronWrapper from 'components/common/JumbotronWrapper';
 
 // Private routes.
 const AdminOnly = () => <JumbotronWrapper title="Admin Only" />;

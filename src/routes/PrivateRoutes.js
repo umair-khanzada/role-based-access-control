@@ -3,8 +3,8 @@ import { Switch, Route } from 'react-router-dom';
 import { uniqBy } from 'lodash';
 import { rolesConfig } from '../config/roles';
 import * as Routes from './index';
-import Navigation from '../components/Navigation';
-import NotFound from '../components/NotFound';
+import Navigation from 'components/common/Navigation';
+import NotFound from 'components/NotFound';
 
 class PrivateRoutes extends Component {
 	state = { allowedRoutes: [] };

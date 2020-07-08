@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Navbar, Nav, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import history from '../util/history';
+import history from 'util/history';
 
 class Navigation extends Component {
 	handleLogout = () => {

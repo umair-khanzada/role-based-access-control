@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Alert, Form, Button, Row, Col } from 'react-bootstrap';
-import JumbotronWrapper from './JumbotronWrapper';
+import JumbotronWrapper from './common/JumbotronWrapper';
 import { Link } from 'react-router-dom';
-import history from '../util/history';
+import history from 'util/history';
 
 class Login extends Component {
 	state = { selected: [] };
