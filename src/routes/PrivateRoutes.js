@@ -4,7 +4,7 @@ import { uniqBy } from 'lodash';
 import { rolesConfig } from '../config/roles';
 import * as Routes from './index';
 import Navigation from 'components/common/Navigation';
-import NotFound from 'components/NotFound';
+import NotFound from 'components/common/NotFound';
 
 class PrivateRoutes extends Component {
 	state = { allowedRoutes: [] };
