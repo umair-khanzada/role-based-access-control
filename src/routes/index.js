@@ -1,25 +1,23 @@
-import React from 'react';
-import JumbotronWrapper from 'components/common/JumbotronWrapper';
+import React, { memo } from 'react';
+import { Router, Route, Switch } from 'react-router-dom';
+import history from 'util/history';
+import PrivateRoutes from './PrivateRoutes';
+import Auth from './Auth';
 
-// Private routes.
-const AdminOnly = () => <JumbotronWrapper title="Admin Only" />;
-const Users = () => <JumbotronWrapper title="Users" />;
-const Dashboard = () => <JumbotronWrapper title="Dashboard" />;
-const Manager = () => <JumbotronWrapper title="Manager" />;
-const Customers = () => <JumbotronWrapper title="Customers" />;
-const Service1 = () => <JumbotronWrapper title="Service1" />;
-const Service2 = () => <JumbotronWrapper title="Service2" />;
-const Profile = () => <JumbotronWrapper title="Profile" />;
-const Home = () => <JumbotronWrapper title="Home" />;
+function Routes() {
+	return (
+		<Router history={history}>
+			<Switch>
+				<Route path="/app">
+					<PrivateRoutes />
+				</Route>
+				<Route path="">
+					<Auth />
+				</Route>
+			</Switch>
+		</Router>
+	)
+}
 
-export {
-	AdminOnly,
-	Users,
-	Dashboard,
-	Manager,
-	Customers,
-	Service1,
-	Service2,
-	Profile,
-	Home
-};
+export default memo(Routes);
+

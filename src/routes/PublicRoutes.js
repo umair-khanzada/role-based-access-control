@@ -19,15 +19,25 @@ const ForgotPassword = () => (
 	</JumbotronWrapper>
 );
 
-const PublicRoutes = ({ match }) => (
-	<Fragment>
-		<Switch>
-			<Route path="/forgot-password" component={ForgotPassword} />
-			<Route path="/register" component={Register} />
-			<Route exact path="/" component={Login} />
-			<Route component={NotFound} />
-		</Switch>
-	</Fragment>
-);
+function PublicRoutes() {
+	return (
+		<Fragment>
+			<Switch>
+				<Route path="/forgot-password">
+					<ForgotPassword />
+				</Route>
+				<Route path="/register">
+					<Register />
+				</Route>
+				<Route exact path="/">
+					<Login />
+				</Route>
+				<Route>
+					<NotFound />
+				</Route>
+			</Switch>
+		</Fragment>
+	)
+}
 
 export default PublicRoutes;
