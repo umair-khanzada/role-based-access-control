@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Alert, Form, Button, Row, Col } from 'react-bootstrap';
-import JumbotronWrapper from './common/JumbotronWrapper';
+import { JumbotronWrapper } from './common';
 import { Link } from 'react-router-dom';
+import { Roles } from 'config';
 import history from 'util/history';
 
 class Login extends Component {
@@ -34,9 +35,11 @@ class Login extends Component {
 						onChange={this.handleChange}
 						multiple
 					>
-						<option value="admin">Admin</option>
-						<option value="manager">Manager</option>
-						<option value="customer">Customer</option>
+						<option value="SUPER_ADMIN">SUPER_ADMIN</option>
+						<option value="ADMIN">ADMIN</option>
+						<option value="MANAGER">MANAGER</option>
+						<option value="CUSTOMER">CUSTOMER</option>
+						<option value="GUEST">GUEST</option>
 					</Form.Control>
 				</Form.Group>
 				<Alert variant="primary">Support multi roles.</Alert>

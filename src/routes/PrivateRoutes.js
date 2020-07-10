@@ -1,29 +1,23 @@
 import React, { Fragment } from 'react';
 import { Switch, Route, Redirect, useRouteMatch } from 'react-router-dom';
-import { uniqBy } from 'lodash';
-import { rolesConfig } from '../config/roles';
-import * as Components from 'components';
-import Navigation from 'components/common/Navigation';
-import NotFound from 'components/common/NotFound';
+import { intersection } from 'lodash';
+import routes from './routeConfig';
+import { Navigation, NotFound } from 'components/common';
 
 function PrivateRoutes() {
-	let allowedRoutes = [],
-		match = useRouteMatch('/app');
-
-	/* TODO: Replace hardcoded roles with redux, localStorage, or get from server. */
+	const match = useRouteMatch('/app');
 	let roles = JSON.parse(localStorage.getItem('roles'));
+	let allowedRoutes = [];
+
 	if (roles) {
-		roles = ['common', ...roles];
-
-		let routes = roles.reduce((acc, role) => {
-			return [...acc, ...rolesConfig[role].routes];
-		}, []);
-
-		// For removing duplicate entries, compare with 'url'.
-		allowedRoutes = uniqBy(routes, 'url');
+		allowedRoutes = routes.filter(({ permission }) => {
+			// TODO: Add support if permission is not define then it is accessible for all.
+			return intersection(permission, roles).length;
+		});
 	} else {
 		return <Redirect to="/" />
 	}
+
 	return (
 		<Fragment>
 			<Navigation
@@ -35,7 +29,7 @@ function PrivateRoutes() {
 					<Route
 						exact
 						key={route.url}
-						component={Components[route.component]}
+						component={route.component}
 						path={`${match.path}${route.url}`}
 					/>
 				))}
