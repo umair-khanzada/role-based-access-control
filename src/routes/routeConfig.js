@@ -1,6 +1,7 @@
 import { Roles } from 'config'
 import { Users, Orders, Products } from 'components';
 
+// when omit the permission or permission is a empty array it means all authenticated users/roles have access to that route
 export default [
 	{
 		component: Users,
@@ -27,12 +28,5 @@ export default [
 		component: Products,
 		url: '/',
 		title: 'Products',
-		permission: [
-			Roles.SUPER_ADMIN,
-			Roles.ADMIN,
-			Roles.MANAGER,
-			Roles.CUSTOMER,
-			Roles.GUEST
-		]
 	}
 ]

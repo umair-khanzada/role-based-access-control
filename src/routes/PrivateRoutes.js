@@ -11,8 +11,9 @@ function PrivateRoutes() {
 
 	if (roles) {
 		allowedRoutes = routes.filter(({ permission }) => {
-			// TODO: Add support if permission is not define then it is accessible for all.
-			return intersection(permission, roles).length;
+			if(!permission) return true;
+			else if(Array.isArray(permission) && !permission.length) return true;
+			else return intersection(permission, roles).length;
 		});
 	} else {
 		return <Redirect to="/" />
@@ -25,15 +26,18 @@ function PrivateRoutes() {
 				path={match.path}
 			/>
 			<Switch>
-				{allowedRoutes.map((route) => (
+				{allowedRoutes.map(({ url, component: RouteComponent }) => (
 					<Route
 						exact
-						key={route.url}
-						component={route.component}
-						path={`${match.path}${route.url}`}
-					/>
+						key={url}
+						path={`${match.path}${url}`}
+					>
+						<RouteComponent />
+					</Route>
 				))}
-				<Route component={NotFound} />
+				<Route>
+					<NotFound />
+				</Route>
 			</Switch>
 		</Fragment>
 	);
