@@ -1,9 +1,14 @@
 import React, { memo } from 'react';
-import { JumbotronWrapper } from './common';
+import { getAllowedRoutes } from 'utils';
+import MapAllowedRoutes from 'routes/MapAllowedRoutes';
 
-function Orders() {
+function Orders({ children }) {
+	const allowedRoutes = getAllowedRoutes(children);
 	return (
-		<JumbotronWrapper title="Orders" />
+		<MapAllowedRoutes
+			routes={allowedRoutes}
+			basePath="/app/orders"
+		/>
 	)
 }
 
