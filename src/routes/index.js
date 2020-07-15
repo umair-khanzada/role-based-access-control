@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
-import history from 'util/history';
+import history from 'utils/history';
 import PrivateRoutes from './PrivateRoutes';
 import Auth from './Auth';
 
