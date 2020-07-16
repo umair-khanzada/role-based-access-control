@@ -10,6 +10,11 @@ function PrivateRoutes() {
 	const roles = JSON.parse(localStorage.getItem('roles'));
 	let allowedRoutes = [];
 
+	/*
+	* Note:
+	*  This app assume if local storage have token it means
+	*  user is authenticated you can update this logic as per your app.
+	*/
 	if (roles) allowedRoutes = getAllowedRoutes(routes);
 	else return <Redirect to="/" />;
 
