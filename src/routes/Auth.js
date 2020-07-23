@@ -7,6 +7,7 @@ import PublicRoutes from './PublicRoutes';
 *  ie: ('/about', '/contact', 'any other public route')
 */
 function Auth() {
+	// TODO: temp logged-in check, update as per your app logic
 	return JSON.parse(localStorage.getItem('roles')) ? (
 			<Redirect to="/app" />
 		) : (

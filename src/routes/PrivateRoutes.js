@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { Redirect, useRouteMatch } from 'react-router-dom';
 import { getAllowedRoutes } from 'utils';
-import routes from './routeConfig';
+import RouteConfig from './RouteConfig';
 import { Navigation } from 'components/common';
 import MapAllowedRoutes from 'routes/MapAllowedRoutes';
 
@@ -12,10 +12,10 @@ function PrivateRoutes() {
 
 	/*
 	* Note:
-	*  This app assume if local storage have token it means
+	*  This app assume if local storage have roles it means
 	*  user is authenticated you can update this logic as per your app.
 	*/
-	if (roles) allowedRoutes = getAllowedRoutes(routes);
+	if (roles) allowedRoutes = getAllowedRoutes(RouteConfig);
 	else return <Redirect to="/" />;
 
 	return (

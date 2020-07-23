@@ -1,5 +1,13 @@
 import { Roles } from 'config'
-import { Users, Orders, OrderDetail, OrderList, Products } from 'components';
+
+// Components
+import {
+	Users,
+	Orders,
+	OrderDetail,
+	OrderList,
+	Products
+} from 'components';
 
 // TODO:
 /*
