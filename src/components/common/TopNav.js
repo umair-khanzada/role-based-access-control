@@ -13,7 +13,7 @@ function TopNav(props) {
 	}
 
 	return (
-		<div className="w3-bar w3-padding w3-card" >
+		<div className={`w3-bar w3-padding w3-card ${props.className}`} >
 			<div className="w3-display-topleft w3-padding-large w3-xlarge">
 				RBAC-V2
 			</div>
@@ -36,11 +36,13 @@ TopNav.propTypes = {
 			title: PropTypes.string.isRequired
 		})
 	).isRequired,
-	path: PropTypes.string
+	path: PropTypes.string,
+	className: PropTypes.string
 };
 
 TopNav.defaultProps ={
 	path: '',
+	className: ''
 };
 
 export default TopNav;
