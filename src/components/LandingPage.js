@@ -1,18 +1,15 @@
 import React, { memo } from 'react';
-import { Link } from 'react-router-dom';
+import { TopNav } from './common';
+
+const navOptions = [
+	{title: 'Login', path: '/login'},
+	{title: 'Register', path: '/register'}
+];
 
 function LandingPage() {
 	return (
 		<div className="bgimg w3-display-container w3-animate-opacity w3-text-white">
-			<div className="w3-bar w3-padding w3-card" >
-				<div className="w3-display-topleft w3-padding-large w3-xlarge">
-					RBAC-V2
-				</div>
-				<div className="w3-right">
-					<Link to="/login" className="w3-bar-item">Login</Link>
-					<Link to="/register" className="w3-bar-item">Register</Link>
-				</div>
-			</div>
+			<TopNav routes={navOptions}/>
 			<div className="w3-display-middle">
 				<h1 className="w3-jumbo w3-animate-top">LANDING PAGE</h1>
 				<hr className="w3-border-grey" style={{margin: 'auto', width: '40%'}} />

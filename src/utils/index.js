@@ -1,5 +1,9 @@
 import { intersection } from 'lodash';
 
+export function isLoggedIn() {
+	return !!localStorage.getItem('roles')
+}
+
 export function isArrayWithLength(arr) {
 	return (Array.isArray(arr) && arr.length)
 }
