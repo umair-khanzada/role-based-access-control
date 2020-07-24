@@ -1,15 +1,20 @@
 import React, { memo } from 'react';
-import { JumbotronWrapper } from './common';
 import { Link } from 'react-router-dom';
+import { Col } from 'react-bootstrap';
+
+import { JumbotronWrapper } from './common';
+import { CenterToScreen } from './common/hoc';
 
 function Register() {
 	return (
-		<JumbotronWrapper title="Register">
-			<Link className="nav-link" to="/">
-				Back to login
-			</Link>
-		</JumbotronWrapper>
+		<Col md="6">
+			<JumbotronWrapper title="Register">
+				<Link to="/login">
+					Back to login
+				</Link>
+			</JumbotronWrapper>
+		</Col>
 	)
 }
 
-export default memo(Register);
+export default memo(CenterToScreen(Register));

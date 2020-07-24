@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { Alert, Form, Button, Row, Col } from 'react-bootstrap';
-import { JumbotronWrapper } from './common';
-import { Link } from 'react-router-dom';
+import { Alert, Form, Button, Col } from 'react-bootstrap';
 import { useHistory } from "react-router-dom";
+import { Link } from 'react-router-dom';
+
+import { JumbotronWrapper } from './common';
+import { CenterToScreen } from './common/hoc';
 
 function Login() {
 	let [selected, setSelected] = useState([]);
@@ -26,41 +28,40 @@ function Login() {
 	}
 
 	return (
-		<JumbotronWrapper title="Login" description="">
-			<Form.Group controlId="exampleForm.ControlSelect1">
-				<Form.Label>Select Role:</Form.Label>
-				<Form.Control
-					as="select"
-					value={selected}
-					onChange={handleChange}
-					multiple
-				>
-					{/* TODO: Dynamic role options */}
-					<option value="SUPER_ADMIN">SUPER_ADMIN</option>
-					<option value="ADMIN">ADMIN</option>
-					<option value="MANAGER">MANAGER</option>
-					<option value="CUSTOMER">CUSTOMER</option>
-					<option value="GUEST">GUEST</option>
-				</Form.Control>
-			</Form.Group>
-			<Alert variant="primary">Support multi roles.</Alert>
-			<Row className="text-right">
-				<Col sm={11}>
+		<Col md="6">
+			<JumbotronWrapper title="Login" description="">
+				<Form.Group controlId="exampleForm.ControlSelect1">
+					<Form.Label>Select Role:</Form.Label>
+					<Form.Control
+						as="select"
+						value={selected}
+						onChange={handleChange}
+						multiple
+					>
+						{/* TODO: Dynamic role options */}
+						<option value="SUPER_ADMIN">SUPER_ADMIN</option>
+						<option value="ADMIN">ADMIN</option>
+						<option value="MANAGER">MANAGER</option>
+						<option value="CUSTOMER">CUSTOMER</option>
+						<option value="GUEST">GUEST</option>
+					</Form.Control>
+				</Form.Group>
+				<Alert variant="primary">Support multi roles.</Alert>
+				<div className="text-right">
 					<Link to="/forgot-password">Forgot Password</Link>
-				</Col>
-				<Col sm={1}>
+					&nbsp;&nbsp;&nbsp;
 					<Link to="/register">Register</Link>
-				</Col>
-			</Row>
-			<Button
-				variant="primary"
-				onClick={handleClick}
-				disabled={!selected.length}
-			>
-				Login
-			</Button>
-		</JumbotronWrapper>
+				</div>
+				<Button
+					variant="primary"
+					onClick={handleClick}
+					disabled={!selected.length}
+				>
+					Login
+				</Button>
+			</JumbotronWrapper>
+		</Col>
 	);
 }
 
-export default Login;
+export default CenterToScreen(Login);

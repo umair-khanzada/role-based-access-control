@@ -1,16 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Container, Jumbotron } from 'react-bootstrap';
+import { Jumbotron } from 'react-bootstrap';
 
 const JumbotronWrapper = (props) => {
 	return (
-		<Container>
-			<Jumbotron style={{ marginTop: '50px' }}>
-				<h1>{props.title}</h1>
-				<div>{props.children}</div>
-				<p>{props.description}</p>
-			</Jumbotron>
-		</Container>
+		<Jumbotron>
+			<h1>{props.title}</h1>
+			<p>{props.description}</p>
+			<div style={{color: '#0056b3'}}>{props.children}</div>
+		</Jumbotron>
 	);
 };
 

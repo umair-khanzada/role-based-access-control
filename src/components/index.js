@@ -6,3 +6,4 @@ export { default as OrderList } from './OrderList';
 export { default as OrderDetail } from './OrderDetail';
 export { default as Products } from './Products';
 export { default as Users } from './Users';
+export { default as LandingPage } from './LandingPage';

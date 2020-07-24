@@ -1,15 +1,20 @@
 import React, { memo } from 'react';
-import { JumbotronWrapper } from './common';
 import { Link } from 'react-router-dom';
+import { Col } from 'react-bootstrap';
+
+import { JumbotronWrapper } from './common';
+import { CenterToScreen } from './common/hoc';
 
 function ForgotPassword() {
 	return (
-		<JumbotronWrapper title="ForgotPassword">
-			<Link className="nav-link" to="/">
-				Back to login
-			</Link>
-		</JumbotronWrapper>
+		<Col md="6">
+			<JumbotronWrapper title="ForgotPassword">
+				<Link to="/login">
+					Back to login
+				</Link>
+			</JumbotronWrapper>
+		</Col>
 	)
 }
 
-export default memo(ForgotPassword);
+export default memo(CenterToScreen(ForgotPassword));
