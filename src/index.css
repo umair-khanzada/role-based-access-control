@@ -1,0 +1,25 @@
+/*
+    Note: This app is not heavily dependent to the css that's only maintain a single css file.
+*/
+
+body {
+    font-family: "Raleway", sans-serif;
+    background: #D3D3D3;
+    min-height: 100vh;
+}
+
+/* LandingPage Component styles */
+.bgimg {
+    background-image: url('https://www.w3schools.com/w3images/forestbridge.jpg');
+    min-height: 100vh;
+    background-position: center;
+    background-size: cover;
+}
+
+/* CenterToScreen Component styles */
+.center-to-screen{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
