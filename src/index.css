@@ -7,7 +7,9 @@ body {
     background: #D3D3D3;
     min-height: 100vh;
 }
-
+.w3-bar {
+    margin-bottom: 20px;
+}
 /* LandingPage Component styles */
 .bgimg {
     background-image: url('https://www.w3schools.com/w3images/forestbridge.jpg');

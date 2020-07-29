@@ -2,11 +2,14 @@ import { Roles } from 'config'
 
 // Components
 import {
-	Users,
-	Orders,
-	OrderDetail,
-	OrderList,
-	Products
+	Module1,
+	Module2,
+	Module3,
+	ModuleN,
+	ModuleNChild1,
+	ModuleNChild2,
+	Dashboard,
+	Profile,
 } from 'components';
 
 // TODO:
@@ -31,25 +34,25 @@ import {
 
 export default [
 	{
-		component: Products,
+		component: Module1,
 		path: '/',
-		title: 'Products',
+		title: 'Module - 1',
 		exact: true,
 	},
 	{
-		component: Users,
-		path: '/users',
-		title: 'Users',
-		exact: true,
-		permission: [
-			Roles.SUPER_ADMIN,
-			Roles.ADMIN
-		]
+		component: Module2,
+		path: '/module-2',
+		title: 'Module - 2',
 	},
 	{
-		component: Orders,
-		path: '/orders',
-		title: 'Orders',
+		component: Module3,
+		path: '/module-3',
+		title: 'Module - 3',
+	},
+	{
+		component: ModuleN,
+		path: '/module-n',
+		title: 'Module - N',
 		permission: [
 			Roles.SUPER_ADMIN,
 			Roles.ADMIN,
@@ -57,17 +60,35 @@ export default [
 		],
 		children: [
 			{
-				component: OrderDetail,
-				path: '/:id',
-				title: 'Orders Details',
-				exact: true,
+				component: ModuleNChild1,
+				path: '/child-1',
+				title: 'Child - 1',
 			},
 			{
-				component: OrderList,
-				path: '',
-				title: 'Orders List',
-				exact: true,
+				component: ModuleNChild2,
+				path: '/child-2',
+				title: 'Child - 2',
 			}
 		]
+	},
+	{
+		component: Dashboard,
+		path: '/dashboard',
+		title: 'Dashboard',
+		permission: [
+			Roles.SUPER_ADMIN,
+			Roles.ADMIN,
+		],
+	},
+	{
+		component: Profile,
+		path: '/profile',
+		title: 'Profile',
+		permission: [
+			Roles.SUPER_ADMIN,
+			Roles.ADMIN,
+			Roles.MANAGER,
+			Roles.CUSTOMER
+		],
 	},
 ]

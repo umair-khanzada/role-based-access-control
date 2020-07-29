@@ -1,10 +1,10 @@
 import React, { memo } from 'react';
 import { JumbotronWrapper } from './common';
 
-function Products() {
+function Profile() {
 	return (
-		<JumbotronWrapper title="Products" />
+		<JumbotronWrapper title="Profile" />
 	)
 }
 
-export default memo(Products);
+export default memo(Profile);

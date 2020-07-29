@@ -13,7 +13,7 @@ function PublicRoutes() {
 				<Route path="/register">
 					<Register />
 				</Route>
-				<Route exact path="/login">
+				<Route path="/login">
 					<Login />
 				</Route>
 				<Route exact path="/">

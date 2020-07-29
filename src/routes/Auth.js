@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
 import { Redirect } from 'react-router-dom';
+import { isLoggedIn } from 'utils';
 import PublicRoutes from './PublicRoutes';
 
 /*
@@ -8,7 +9,7 @@ import PublicRoutes from './PublicRoutes';
 */
 function Auth() {
 	// TODO: temp logged-in check, update as per your app logic
-	return JSON.parse(localStorage.getItem('roles')) ? (
+	return isLoggedIn() ? (
 			<Redirect to="/app" />
 		) : (
 			<PublicRoutes />

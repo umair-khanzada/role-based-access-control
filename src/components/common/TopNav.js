@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Button } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { Link, useHistory } from "react-router-dom";
@@ -45,4 +45,4 @@ TopNav.defaultProps ={
 	className: ''
 };
 
-export default TopNav;
+export default memo(TopNav);

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import JumbotronWrapper from './JumbotronWrapper';
@@ -20,7 +20,7 @@ NotFound.defaultProps = {
 	jumbotronProps: {
 		title: '404 not found'
 	},
-	children: (<Link className="nav-link" to="/">Back</Link>)
+	children: (<Link to="/">Back to home</Link>)
 };
 
-export default NotFound;
+export default memo(NotFound);
