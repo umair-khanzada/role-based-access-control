@@ -8,6 +8,7 @@ export { default as Module3 } from './Module3';
 export { default as ModuleN } from './ModuleN';
 export { default as ModuleNChild1 } from './ModuleNChild1';
 export { default as ModuleNChild2 } from './ModuleNChild2';
+export { default as ModuleNChild3 } from './ModuleNChild3';
 export { default as Profile } from './Profile';
 export { default as Dashboard } from './Dashboard';
 

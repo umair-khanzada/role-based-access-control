@@ -8,6 +8,7 @@ import {
 	ModuleN,
 	ModuleNChild1,
 	ModuleNChild2,
+	ModuleNChild3,
 	Dashboard,
 	Profile,
 } from 'components';
@@ -68,6 +69,15 @@ export default [
 				component: ModuleNChild2,
 				path: '/child-2',
 				title: 'Child - 2',
+			},
+			{
+				component: ModuleNChild3,
+				path: '/child-3',
+				title: 'Child - 3',
+				permission: [
+					Roles.SUPER_ADMIN,
+					Roles.ADMIN
+				]
 			}
 		]
 	},
