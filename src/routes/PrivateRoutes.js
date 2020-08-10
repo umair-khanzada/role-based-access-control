@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { Redirect, useRouteMatch } from 'react-router-dom';
 import { getAllowedRoutes, isLoggedIn } from 'utils';
-import RouteConfig from './RouteConfig';
+import { PrivateRoutesConfig } from 'config';
 import { TopNav } from 'components/common';
 import MapAllowedRoutes from 'routes/MapAllowedRoutes';
 
@@ -9,7 +9,7 @@ function PrivateRoutes() {
 	const match = useRouteMatch('/app');
 	let allowedRoutes = [];
 
-	if (isLoggedIn()) allowedRoutes = getAllowedRoutes(RouteConfig);
+	if (isLoggedIn()) allowedRoutes = getAllowedRoutes(PrivateRoutesConfig);
 	else return <Redirect to="/" />;
 
 	return (
