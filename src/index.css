@@ -1,13 +1,27 @@
+/*
+    Note: This app is not heavily dependent to the css that's only maintain a single css file.
+*/
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-family: "Raleway", sans-serif;
+    background: #D3D3D3;
+    min-height: 100vh;
+}
+.w3-bar {
+    margin-bottom: 20px;
+}
+/* LandingPage Component styles */
+.bgimg {
+    background-image: url('https://www.w3schools.com/w3images/forestbridge.jpg');
+    min-height: 100vh;
+    background-position: center;
+    background-size: cover;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+/* CenterToScreen Component styles */
+.center-to-screen{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
