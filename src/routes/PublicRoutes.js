@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { Login, Register, ForgotPassword, LandingPage } from 'components';
-import { NotFound } from 'components/common';
 
 function PublicRoutes() {
 	return (
@@ -16,11 +15,8 @@ function PublicRoutes() {
 				<Route path="/login">
 					<Login />
 				</Route>
-				<Route exact path="/">
+				<Route path="">
 					<LandingPage />
-				</Route>
-				<Route>
-					<NotFound />
 				</Route>
 			</Switch>
 		</Fragment>
