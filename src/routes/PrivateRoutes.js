@@ -14,7 +14,7 @@ function PrivateRoutes() {
 
 	return (
 		<Fragment>
-			<TopNav routes={allowedRoutes} path={match.path} className="bg-white" />
+			<TopNav routes={allowedRoutes} prefix={match.path} className="bg-white" />
 			<MapAllowedRoutes routes={allowedRoutes} basePath="/app" isAddNotFound />
 		</Fragment>
 	);

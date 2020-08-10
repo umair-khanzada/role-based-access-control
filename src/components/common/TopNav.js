@@ -19,7 +19,7 @@ function TopNav(props) {
 			</div>
 			<div className="w3-right">
 				{props.routes.map(({ path, title }) => (
-					<Link key={path} className="w3-bar-item" to={`${props.path}${path}`}>
+					<Link key={path} className="w3-bar-item" to={`${props.prefix}${path}`}>
 						{title}
 					</Link>
 				))}
@@ -36,12 +36,12 @@ TopNav.propTypes = {
 			title: PropTypes.string.isRequired
 		})
 	).isRequired,
-	path: PropTypes.string,
+	prefix: PropTypes.string,
 	className: PropTypes.string
 };
 
 TopNav.defaultProps ={
-	path: '',
+	prefix: '',
 	className: ''
 };
 
