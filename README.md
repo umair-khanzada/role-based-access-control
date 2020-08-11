@@ -3,7 +3,7 @@
 ## Links
 [Demo App](https://umair-khanzada.github.io/role-based-access-control/) 
 <br />
-[Medium Story](https://medium.com/@umairkz52/role-based-authorization-role-based-access-control-in-react-js-65c05a372ca8)
+[Medium Story Version-2](https://medium.com/@umairkz52/role-based-authorization-role-based-access-control-v-2-in-react-js-cb958e338f4b)
 
 
 ## Description
